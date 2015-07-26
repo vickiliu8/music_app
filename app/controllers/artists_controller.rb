@@ -12,21 +12,22 @@ class ArtistsController < ApplicationController
 		@genre = Genre.find(params[:genre_id])
 		@artist = @genre.artists.create(artist_params) 
 		if @artist.save
-			redirect_to artist_path(@artist)
+			redirect_to genre_path(@genre)
 		else
 			render :new
 		end
 	end
 
 	def new
-		@artist = Artist.new
+		@genre = Genre.find(params[:genre_id])
+		@artist = @genre.artists.new
 	end
 
 	def update
 		@genre = Genre.find(params[:genre_id])
-		@artist = genre.artists.find(params[:id])
+		@artist = @genre.artists.find(params[:id])
 		if @artist.update(artist_params)
-			redirect_to genre_artist_path(@artist)
+			redirect_to genre_artist_path(@genre, @artist)
 		else
 			render :edit
 		end
@@ -34,9 +35,10 @@ class ArtistsController < ApplicationController
 	end
 
 	def destroy
-		@artist = Artist.find(params[:id])
-		@artist.destroy
-		redirect_to artists_path
+		@genre = Genre.find(params[:genre_id])
+  	  	@artist = @genre.artists.find(params[:id])
+   		@artist.destroy
+   	 	redirect_to genre_path(@genre)
 	end
 
 	def edit
