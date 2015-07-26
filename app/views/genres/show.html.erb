@@ -4,7 +4,7 @@
 
 <p>
 	<% @artists.each do |artist| %>
-		<p> <%= artist.name %> | <%= link_to "edit", edit_genre_artist_path(@genre, artist)%></p> | <%= link_to 'Destroy', genre_artist_path(@genre, artist), method: :delete, data: { confirm: 'Are you sure?' } %> 
+		<p><%= link_to artist.name, genre_artist_path(@genre, artist) %> | <%= link_to "edit", edit_genre_artist_path(@genre, artist)%> | <%= link_to 'Destroy', genre_artist_path(@genre, artist), method: :delete, data: { confirm: 'Are you sure?' } %> </p>
 		<br>
 	<% end %>
 
