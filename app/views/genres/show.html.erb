@@ -1,0 +1,19 @@
+<h1><%=@genre.name%></h1>
+<h3><%=@genre.description%></h3>
+<h3><%=@genre.mood%></h3>
+
+<p>
+	<% @genre.artists.each do |artist| %>
+		<p> <%= artist.name %></p>
+		<br>
+	<% end %>
+
+
+</p>
+
+<h3> add a new artist </h3>
+
+<%= render 'artists/form' %>
+
+<%= link_to "edit", edit_genre_path(@genre) %>
+<%= link_to "back", genres_path %>
