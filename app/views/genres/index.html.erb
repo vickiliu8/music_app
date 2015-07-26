@@ -1,10 +1,13 @@
 <h1> Choose a music genre </h1>
 
 <% @genres.each do |genre| %>
-	<%= link_to genre.name, genre_path(genre)%>
+	<%= link_to genre.name, genre_path(genre)%> | <%= link_to "edit", edit_genre_path(genre)%> | <%= link_to 'Destroy', genre_path(genre), method: :delete, data: { confirm: 'Are you sure?' } %>
 	<br>
 
 
 
 
+
 <% end %>
+
+<%= link_to "make a new genre", new_genre_path %>
