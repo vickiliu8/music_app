@@ -17,10 +17,10 @@ Genre.create(name: "Hipster", description: "i knew this artist before they were 
 Artist.delete_all
 puts "creating artists"
 
-Artist.create(name: "Katy Perry", genres: Genre.where(name: "Shitty pop"))
-Artist.create(name: "Kesha", genres: Genre.where(name:"Shitty pop"))
-Artist.create(name: "Falloutboy", genres: Genre.where(name: "Hardcore Emo"))
-Artist.create(name: "My Chemical Romace", genres: Genre.where(name: "Hardcore Emo"))
+Artist.create(name: "Katy Perry", bio: "dancing sharks", genres: Genre.where(name: "Shitty pop"))
+Artist.create(name: "Kesha", bio: "glitter everywhere", genres: Genre.where(name:"Shitty pop"))
+Artist.create(name: "Falloutboy", bio: "eyeliner as black as my soul", genres: Genre.where(name: "Hardcore Emo"))
+Artist.create(name: "My Chemical Romace", bio:"googling where the black parade is", genres: Genre.where(name: "Hardcore Emo"))
 
 
 
