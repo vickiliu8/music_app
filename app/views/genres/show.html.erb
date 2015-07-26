@@ -3,17 +3,17 @@
 <h3><%=@genre.mood%></h3>
 
 <p>
-	<% @genre.artists.each do |artist| %>
-		<p> <%= artist.name %></p>
+	<% @artists.each do |artist| %>
+		<p> <%= artist.name %> | <a href= "/genres/<%=@genre.id%>/artists/<%=artist.id%>/edit">edit </a></p>
 		<br>
 	<% end %>
 
 
 </p>
 
-<h3> add a new artist </h3>
 
-<%= render 'artists/form' %>
+
+<a href = "/genres/<%=@genre.id%>/artists/new">add a new artist</a>
 
 <%= link_to "edit", edit_genre_path(@genre) %>
 <%= link_to "back", genres_path %>
