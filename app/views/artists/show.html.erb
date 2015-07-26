@@ -1,3 +1,7 @@
 <h1><%= @artist.name %></h1>
+<h2><%= @artist.bio %></h2>
 
+<h2><%= @genre %></h2>
+<%= link_to "edit", edit_genre_artist_path(@genre, @artist) %>
 <%= link_to "all artist", genre_artists_path %>
+<%= link_to 'Destroy', genre_artist_path(@genre, @artist), method: :delete, data: { confirm: 'Are you sure?' } %> </p>
