@@ -1,19 +1,24 @@
+<div class="jumbotron">
 <h1><%=@genre.name%></h1>
-<h3><%=@genre.description%></h3>
-<h3><%=@genre.mood%></h3>
+<h4><%=@genre.description%></h4>
+<h4><%=@genre.mood%></h4>
 
 <p>
 	<% @artists.each do |artist| %>
-		<p><%= link_to artist.name, genre_artist_path(@genre, artist) %> | <%= link_to "edit", edit_genre_artist_path(@genre, artist)%> | <%= link_to 'Destroy', genre_artist_path(@genre, artist), method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+		<p class="lead"> <%= link_to artist.name, genre_artist_path(@genre, artist) %> | <%= link_to "edit", edit_genre_artist_path(@genre, artist)%> | <%= link_to 'Destroy', genre_artist_path(@genre, artist), method: :delete, data: { confirm: 'Are you sure?' } %> </p>
 		<br>
 	<% end %>
-
 
 </p>
 
 
+<div class="btn-group btn-group-justified">
+<a href = "/genres/<%=@genre.id%>/artists/new" class="btn btn-default">add a new artist</a>
 
-<a href = "/genres/<%=@genre.id%>/artists/new">add a new artist</a>
+<div class="btn btn-default"> <%= link_to "edit", edit_genre_path(@genre) %></div>
+<div class="btn btn-default"> <%= link_to "back", genres_path %>
+</div>
+</div>
 
-<%= link_to "edit", edit_genre_path(@genre) %>
-<%= link_to "back", genres_path %>
+
+  
