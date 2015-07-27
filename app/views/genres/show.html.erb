@@ -3,7 +3,6 @@
 <h3>description: <%=@genre.description%></h3>
 <h3>mood: <%=@genre.mood%></h3>
 <br>
-
 <p>
 	<% @artists.each do |artist| %>
 		<p class = "lead"><%= link_to artist.name, genre_artist_path(@genre, artist) %> | <%= link_to "edit", edit_genre_artist_path(@genre, artist)%> | <%= link_to 'Destroy', genre_artist_path(@genre, artist), method: :delete, data: { confirm: 'Are you sure?' } %> </p>
@@ -13,7 +12,7 @@
 
 
 
-<div class="btn-group btn-group-justified">
+<div type = "button" class="btn-group btn-group-justified">
 
 <div class = "btn btn-default"> <%= link_to "add new artist to genre", new_genre_artist_path(@genre)%></div>
 

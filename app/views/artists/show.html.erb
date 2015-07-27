@@ -2,12 +2,14 @@
 <h2>bio: <%= @artist.bio %></h2>
 
 <h2>genre: <%= @genre.name %></h2>
-<div class = "text-center">
 <br>
-<%= link_to "edit", edit_genre_artist_path(@genre, @artist) %>
-<br>
-<%= link_to "all artists", genre_artists_path %>
-<br>
-<%= link_to 'destroy', genre_artist_path(@genre, @artist), method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+
+<div type = "button" class="btn-group btn-group-justified">
+
+<div class = "btn btn-default"><%= link_to "edit", edit_genre_artist_path(@genre, @artist) %></div>
+
+<div class = "btn btn-default"><%= link_to "all artists", genre_artists_path %></div>
+
+<div class = "btn btn-default"><%= link_to 'destroy', genre_artist_path(@genre, @artist), method: :delete, data: { confirm: 'Are you sure?' } %> </div>
 
 </div>
